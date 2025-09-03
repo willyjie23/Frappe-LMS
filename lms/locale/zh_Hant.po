@@ -7439,3 +7439,75 @@ msgstr "{} 通過"
 msgid "{} Published"
 msgstr "{} 已發佈"
 
+
+#: frontend/src/components/various.vue:1
+msgid "Submitted"
+msgstr "已提交"
+
+#: frontend/src/components/various.vue:1
+msgid "Classes"
+msgstr "課程"
+
+#: frontend/src/components/various.vue:1
+msgid "Announcements"
+msgstr "公告"
+
+#: frontend/src/components/various.vue:1
+msgid "Status/Percentage"
+msgstr "狀態/百分比"
+
+#: frontend/src/components/various.vue:1
+msgid "My Profile"
+msgstr "我的檔案"
+
+#: frontend/src/components/various.vue:1
+msgid "Toggle Theme"
+msgstr "切換主題"
+
+#: frontend/src/components/various.vue:1
+msgid "Login to Frappe Cloud"
+msgstr "登入 Frappe 雲端"
+
+#: frontend/src/components/various.vue:1
+msgid "Log out"
+msgstr "登出"
+
+#: frontend/src/components/various.vue:1
+msgid "Log in"
+msgstr "登入"
+
+#: frontend/src/components/various.vue:1
+msgid "Badges"
+msgstr "徽章"
+
+#: frontend/src/components/various.vue:1
+msgid "Submissions"
+msgstr "提交"
+
+#: frontend/src/components/various.vue:1
+msgid "Last Active"
+msgstr "最後活動"
+
+#: frontend/src/components/various.vue:1
+msgid "Profile"
+msgstr "檔案"
+
+#: frontend/src/components/various.vue:1
+msgid "Learning"
+msgstr "學習"
+
+#: frontend/src/components/various.vue:1
+msgid "Include in Preview"
+msgstr "包含在預覽中"
+
+#: frontend/src/components/various.vue:1
+msgid "ProseMirror"
+msgstr "ProseMirror"
+
+#: frontend/src/components/various.vue:1
+msgid "Submitted successfully"
+msgstr "提交成功"
+
+#: frontend/src/components/Modals/JobApplicationModal.vue:115
+msgid "Your application has been submitted successfully"
+msgstr "您的申請已成功提交"

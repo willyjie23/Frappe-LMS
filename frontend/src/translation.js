@@ -55,7 +55,8 @@ function getCurrentUserLanguage() {
 	} catch (e) {
 		// Fallback if localStorage is not available
 	}
-	return null
+	// Always default to Traditional Chinese
+	return 'zh_Hant'
 }
 
 // Function to reload translations with a specific language

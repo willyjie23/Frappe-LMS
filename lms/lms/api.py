@@ -171,6 +171,10 @@ def get_translations(lang=None):
 		# Get default system language
 		language = frappe.db.get_single_value("System Settings", "language")
 	
+	# Map Traditional Chinese language codes to zh_Hant
+	if language in ["zh-TW", "zh_TW", "zh-Hant"]:
+		language = "zh_Hant"
+	
 	# Default to Traditional Chinese if no language is set
 	if not language:
 		language = "zh_Hant"
