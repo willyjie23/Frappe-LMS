@@ -24,7 +24,7 @@ bench set-redis-socketio-host redis://redis:6379
 sed -i '/redis/d' ./Procfile
 sed -i '/watch/d' ./Procfile
 
-bench get-app lms
+bench get-app lms https://github.com/willyjie23/Frappe-LMS.git
 
 bench new-site lms.localhost \
 --force \

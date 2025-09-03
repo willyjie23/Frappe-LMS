@@ -29,12 +29,52 @@ function translate(message) {
 }
 
 function fetchTranslations(lang) {
+	// Get language from URL parameter, user preference, or default to Traditional Chinese
+	const urlParams = new URLSearchParams(window.location.search)
+	const requestedLang = lang || urlParams.get('lang') || getCurrentUserLanguage() || 'zh_Hant'
+	
 	createResource({
 		url: 'lms.lms.api.get_translations',
-		cache: 'translations',
+		params: { lang: requestedLang },
+		cache: `translations_${requestedLang}`,
 		auto: true,
 		transform: (data) => {
 			window.translatedMessages = data
+			window.currentLanguage = requestedLang
 		},
 	})
 }
+
+function getCurrentUserLanguage() {
+	// Try to get language from cookie or localStorage
+	try {
+		const storedLang = localStorage.getItem('user_language')
+		if (storedLang) {
+			return storedLang
+		}
+	} catch (e) {
+		// Fallback if localStorage is not available
+	}
+	return null
+}
+
+// Function to reload translations with a specific language
+function reloadTranslations(lang) {
+	// Clear existing translations
+	if (window.translatedMessages) {
+		delete window.translatedMessages
+	}
+	
+	// Store language preference
+	try {
+		localStorage.setItem('user_language', lang)
+	} catch (e) {
+		// Fallback if localStorage is not available
+	}
+	
+	// Fetch new translations
+	fetchTranslations(lang)
+}
+
+// Export the reload function for use in components
+window.reloadTranslations = reloadTranslations

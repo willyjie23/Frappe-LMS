@@ -160,11 +160,21 @@ def get_user_info():
 
 
 @frappe.whitelist(allow_guest=True)
-def get_translations():
-	if frappe.session.user != "Guest":
+def get_translations(lang=None):
+	if lang:
+		# If a specific language is requested, use it
+		language = lang
+	elif frappe.session.user != "Guest":
+		# Get language from user profile
 		language = frappe.db.get_value("User", frappe.session.user, "language")
 	else:
+		# Get default system language
 		language = frappe.db.get_single_value("System Settings", "language")
+	
+	# Default to Traditional Chinese if no language is set
+	if not language:
+		language = "zh_Hant"
+	
 	return get_all_translations(language)
 
 

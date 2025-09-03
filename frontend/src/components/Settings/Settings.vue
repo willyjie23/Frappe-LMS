@@ -79,6 +79,7 @@ import BrandSettings from '@/components/Settings/BrandSettings.vue'
 import PaymentSettings from '@/components/Settings/PaymentSettings.vue'
 import ZoomSettings from '@/components/Settings/ZoomSettings.vue'
 import Badges from '@/components/Settings/Badges.vue'
+import LanguageSettings from '@/components/Settings/LanguageSettings.vue'
 
 const show = defineModel()
 const doctype = ref('LMS Settings')
@@ -155,6 +156,12 @@ const tabsStructure = computed(() => {
 							type: 'password',
 						},
 					],
+				},
+				{
+					label: 'Language',
+					icon: 'Globe',
+					description: 'Configure language preferences and localization settings',
+					template: markRaw(LanguageSettings),
 				},
 			],
 		},
